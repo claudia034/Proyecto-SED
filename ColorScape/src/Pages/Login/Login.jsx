@@ -8,7 +8,7 @@ const LoginPage = () => {
   const login = () => {
     axios
       .post(
-        "/auth/login",
+        "/api/auth/login",
         {
           username: document.getElementById("correo").value,
           password: document.getElementById("pass").value,

@@ -37,7 +37,7 @@ const RegisterPage = () => {
 
     try {
       // Realizar la llamada a la API usando Axios
-      const response = await axios.post("/auth/register", {
+      const response = await axios.post("/api/auth/register", {
         fullName,
         phoneNumber,
         email,
