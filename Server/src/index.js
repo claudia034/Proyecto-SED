@@ -10,14 +10,14 @@ app.use(express.urlencoded({ extended: false }));
 // Configura CORS para permitir solicitudes desde localhost y tu dominio específico
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: "*",
     methods: "GET, POST, PUT, DELETE",
     credentials: true,
   })
 );
 
 app.options("*", (req, res) => {
-  res.header("Access-Control-Allow-Origin", "http://localhost:3000");
+  res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
   res.header(
     "Access-Control-Allow-Headers",
@@ -30,6 +30,7 @@ let auth = require("./Routes/auth");
 
 app.use("/auth", auth);
 
-app.listen(process.env.SERVER_PORT, function () {
-  console.log(`Example app listening on port ${process.env.SERVER_PORT}!`);
+app.listen(process.env.SERVER_PORT, () => {
+  console.log(`Servidor backend escuchando en el puerto ${process.env.SERVER_PORT}`);
 });
+
