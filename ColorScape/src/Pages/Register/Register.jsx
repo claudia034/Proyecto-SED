@@ -37,7 +37,7 @@ const RegisterPage = () => {
 
     try {
       // Realizar la llamada a la API usando Axios
-      const response = await axios.post("http://localhost:3000/auth/register", {
+      const response = await axios.post("http://127.0.0.1:3000/auth/register", {
         fullName,
         phoneNumber,
         email,

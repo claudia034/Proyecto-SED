@@ -8,7 +8,7 @@ const LoginPage = () => {
   const login = () => {
     axios
       .post(
-        "http://localhost:3000/auth/login",
+        "http://127.0.0.1:3000/auth/login",
         {
           username: document.getElementById("correo").value,
           password: document.getElementById("pass").value,
