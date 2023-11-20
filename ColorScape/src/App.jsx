@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 //import "./App.css";
 import "./index.css"; // Puedes importar aquí estilos globales de tu aplicación
 import "bootstrap/dist/css/bootstrap.min.css"; // Importa el CSS de Bootstrap
@@ -21,10 +21,12 @@ import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import LoginPage from "./Pages/Login/Login";
 import RegisterPage from "./Pages/Register/Register";
+import Perfil from "./Pages/Perfil/Perfil";
+import Dashboard from "./Pages/Dashboard/Dashboard";
 
 function App() {
   library.add(fas, fab, far);
-  const [count, setCount] = useState(0);
+  
 
   return (
     <>
@@ -35,7 +37,8 @@ function App() {
             <Route path="/" element={<Index />} />
             <Route path="/login" element={<LoginPage></LoginPage>} />
             <Route path="/register" element={<RegisterPage></RegisterPage>} />
-
+            <Route path="/perfil" element={<Perfil></Perfil>} />
+            <Route path="/dashboard" element={<Dashboard></Dashboard>} />
           </Routes>
         </main>
         <Footer></Footer>

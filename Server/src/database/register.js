@@ -36,6 +36,7 @@ async function register({
       email,
       password,
       address,
+      rol: 0,
       age,
       gender,
       emergencyContact,
@@ -44,7 +45,7 @@ async function register({
 
     const result = await users.insertOne(newUser);
 
-    console.log(result)
+    console.log(result);
 
     if (result) {
       return { success: "Usuario registrado con éxito" };

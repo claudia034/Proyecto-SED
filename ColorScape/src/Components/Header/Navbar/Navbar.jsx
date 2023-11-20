@@ -9,6 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -23,6 +24,19 @@ function Navbar() {
   useEffect(() => {
     if (localStorage.getItem("token")) {
       setToken(localStorage.getItem("token"));
+      async function validToken() {
+        const response = await axios.get("/auth/getrole", {
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("token")}`, // Sustituye "tuToken" con la variable que contiene tu token
+          },
+        });
+        const { user } = response.data;
+        console.log("Respuesta del servidor: ", user.rol);
+        if (user.rol == -1) {
+          logout();
+        }
+      }
+      validToken();
     } else {
       setToken(false);
     }
@@ -95,6 +109,26 @@ function Navbar() {
                 </li>
                 {token != false ? (
                   <>
+                    <li className="nav-item">
+                      <button
+                        className="nav-link"
+                        onClick={() => {
+                          navigate("/dashboard");
+                        }}
+                      >
+                        <FontAwesomeIcon icon={faUser} /> Dashboard
+                      </button>
+                    </li>
+                    <li className="nav-item">
+                      <button
+                        className="nav-link"
+                        onClick={() => {
+                          navigate("/perfil");
+                        }}
+                      >
+                        <FontAwesomeIcon icon={faUser} /> Perfil
+                      </button>
+                    </li>
                     <li className="nav-item">
                       <button
                         className="nav-link"

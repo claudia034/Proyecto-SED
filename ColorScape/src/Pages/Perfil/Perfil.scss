@@ -1,0 +1,82 @@
+.container-perfil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f2f2f2;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  color: #000000;
+  .perfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    width: 80vw;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    .perfil__img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 30vh;
+      width: 30vh;
+      border-radius: 50%;
+      background-color: #000000;
+      margin-top: 5vh;
+      img {
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+      }
+    }
+    .perfil__info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 50vh;
+      width: 100%;
+      margin-top: 5vh;
+      .perfil__info__nome {
+        font-size: 2rem;
+        font-weight: bold;
+      }
+      .perfil__info__email {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+      .perfil__info__senha {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+      .perfil__info__btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 5vh;
+        width: 100%;
+        margin-top: 5vh;
+        button {
+          height: 100%;
+          width: 100%;
+          border: none;
+          border-radius: 10px;
+          background-color: #000000;
+          color: #ffffff;
+          font-size: 1.5rem;
+          font-weight: bold;
+          cursor: pointer;
+          &:hover {
+            background-color: #ffffff;
+            color: #000000;
+            border: 1px solid #000000;
+          }
+        }
+      }
+    }
+  }
+}

@@ -7,18 +7,17 @@ function CreateJWT({ data }) {
 
 function verificarJWT({ data }) {
   const { token } = data;
-
   if (!token) {
     return false;
   }
 
-  jwt.verify(token, process.env.JWT_SECRET, (err, email) => {
+  return jwt.verify(token, process.env.JWT_SECRET, (err, data) => {
     if (err) {
+      console.log(err);
       return false;
     }
-
     return {
-      email,
+      data,
     };
   });
 }

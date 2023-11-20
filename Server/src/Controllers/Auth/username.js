@@ -1,19 +1,30 @@
 require("dotenv").config();
 
-const { login } = require("../../database/login");
+const { login, UserName } = require("../../database/login");
 const { verificarJWT } = require("../../helpers/jwt");
 
 const usernameControllers = async (req, res) => {
   try {
     const { token } = req.params;
-    const user = await verificarJWT({
+    const data = await verificarJWT({
       data: {
         token,
       },
     });
-    if (user) {
-      const { username } = await login({ email: user.email });
-      res.status(200).json({ username });
+    console.log(data);
+    if (data) {
+      const user = await UserName({ email: data.data.email });
+      res.status(200).json({
+        address: user.address,
+        age: user.age,
+        email: user.email,
+        emergencyContact: user.emergencyContact,
+        gender: user.gender,
+        guardianNumber: user.guardianNumber,
+        phoneNumber: user.phoneNumber,
+        rol: user.rol,
+        username: user.username,
+      });
     } else {
       res.status(401).json({ message: "Invalid credentials" });
     }
