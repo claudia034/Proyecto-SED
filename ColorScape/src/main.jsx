@@ -4,8 +4,8 @@ import App from './App.jsx'
 import './index.css'
 import axios from 'axios'
 
-axios.defaults.baseURL = "http://localhost:3000/"
-//axios.defaults.baseURL = "/api"
+//axios.defaults.baseURL = "http://localhost:3000/"
+axios.defaults.baseURL = "/api"
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
