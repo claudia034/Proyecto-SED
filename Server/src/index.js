@@ -28,9 +28,11 @@ app.options("*", (req, res) => {
 
 let auth = require("./Routes/auth");
 let admin = require("./Routes/admin");
+let general = require("./Routes/general");
 
 app.use("/auth", auth);
 app.use("/admin", admin);
+app.use("/general", general);
 
 app.listen(process.env.SERVER_PORT, () => {
   console.log(

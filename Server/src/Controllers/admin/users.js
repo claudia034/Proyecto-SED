@@ -46,12 +46,12 @@ const UpdateUsersControllers = async (req, res) => {
         token: tokenValue,
       },
     });
-    console.log(req.params);
+    console.log(req.body);
     if (data) {
       if (data.rol > 0) {
         const updatedUser = await updateprofile({
           data: {
-            email: req.params.email,
+            email: req.body.email,
           },
           body: req.body,
         });

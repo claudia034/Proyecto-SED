@@ -3,6 +3,6 @@ const { UsersControllers, UpdateUsersControllers } = require("../Controllers/adm
 const router = Router();
 
 router.get("/users", UsersControllers);
-router.post("/user/:email", UpdateUsersControllers)
+router.post("/user/edit", UpdateUsersControllers)
 
 module.exports = router;
