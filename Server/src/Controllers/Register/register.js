@@ -53,7 +53,7 @@ const RegisterControllers = async (req, res) => {
     }
 
     res.json({
-      success: user.msg,
+      success: user.success,
     });
   } catch (err) {
     console.error(err);
