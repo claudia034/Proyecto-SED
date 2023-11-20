@@ -9,7 +9,8 @@ async function updateprofile({ data, body }) {
     const users = database.collection("users");
     console.log(data);
     delete body.data._id;
-    console.log(body.data)
+    body.data.rol = parseInt(body.data.rol);
+    console.log(body.data);
     const result = await users.findOneAndUpdate(
       { email: data.email },
       { $set: body.data },
