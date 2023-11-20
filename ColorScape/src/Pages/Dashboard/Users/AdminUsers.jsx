@@ -45,7 +45,7 @@ const AdminUsers = ({ setEditing, isEditing, userRole }) => {
       .catch((error) => {
         console.error("Error al obtener usuarios:", error);
       });
-  });
+  }, []);
 
   return (
     <div>
