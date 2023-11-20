@@ -1,0 +1,97 @@
+.header-area {
+  /* Navbar scss */
+
+  .navbar-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9;
+
+    &.sticky {
+      position: fixed;
+      background-color: #fff;
+      box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.5);
+    }
+
+    .navbar {
+      position: relative;
+      padding: 20px 0;
+
+      &-brand {
+        .image {
+          max-width: 150px;
+        }
+      }
+
+      @media only screen and (min-width: 768px) and (max-width: 991px),
+        (max-width: 767px) {
+        .navbar-collapse {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          padding: 5px 12px;
+          background-color: #fff;
+          box-shadow: 0 15px 20px 0 rgb(0 0 0 / 10%);
+        }
+      }
+
+      &-light {
+        .navbar-toggler {
+          color: transparent;
+          border-color: transparent;
+
+          &:focus {
+            box-shadow: none;
+          }
+        }
+      }
+
+      &-nav {
+        .nav-item {
+          position: relative;
+          margin-left: 40px;
+
+          .nav-link {
+            position: relative;
+            padding: 10px 0;
+            font-size: 18px;
+            font-weight: 400;
+            color: #38424d;
+
+            &.active,
+            &:hover {
+              color: #ff846f;
+            }
+
+            &::before {
+              content: "";
+              position: absolute;
+              width: 8px;
+              height: 8px;
+              bottom: 0;
+              left: 50%;
+              border-radius: 50%;
+              background-color: #38424d;
+              opacity: 0;
+              transition: all 0.3s ease-out 0s;
+            }
+
+            @media only screen and (min-width: 768px) and (max-width: 991px),
+              (max-width: 767px) {
+              &::before {
+                position: relative;
+              }
+            }
+
+            &.active::before,
+            &:hover::before {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+}
