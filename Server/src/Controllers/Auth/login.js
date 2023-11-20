@@ -12,7 +12,12 @@ const LoginControllers = async (req, res) => {
     }
     // Create token
     const token = CreateJWT({
-      data: { id: user._id, username: user.username, email: user.email },
+      data: {
+        id: user._id,
+        username: user.username,
+        email: user.email,
+        rol: user.rol,
+      },
     });
     // Set cookie and send response
     res.json({

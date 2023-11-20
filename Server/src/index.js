@@ -27,10 +27,13 @@ app.options("*", (req, res) => {
 });
 
 let auth = require("./Routes/auth");
+let admin = require("./Routes/admin");
 
 app.use("/auth", auth);
+app.use("/admin", admin);
 
 app.listen(process.env.SERVER_PORT, () => {
-  console.log(`Servidor backend escuchando en el puerto ${process.env.SERVER_PORT}`);
+  console.log(
+    `Servidor backend escuchando en el puerto ${process.env.SERVER_PORT}`
+  );
 });
-

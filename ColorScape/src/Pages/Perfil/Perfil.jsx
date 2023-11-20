@@ -70,26 +70,26 @@ const Perfil = () => {
           <div className="container-perfil__datos">
             <div className="container-perfil__datos__info">
               {!isEditing ? (
-                <>
-                  <p>Nombre de usuario: </p>
-                  <h2>{dataPerfil.username}</h2>
-                  <p>Correo: </p>
+                <div className="profile-info">
+                  <h4>Nombre de usuario: </h4>
+                  <p>{dataPerfil.username}</p>
+                  <h4>Correo: </h4>
                   <p>{dataPerfil.email}</p>
-                  <p>Numero de telefono: </p>
+                  <h4>Numero de telefono: </h4>
                   <p>{dataPerfil.phoneNumber}</p>
-                  <p>Direccion: </p>
+                  <h4>Direccion: </h4>
                   <p>{dataPerfil.address}</p>
-                  <p>Genero:</p>
+                  <h4>Genero:</h4>
                   <p>{dataPerfil.gender}</p>
-                  <p>Contacto de emergencia:</p>
+                  <h4>Contacto de emergencia:</h4>
                   <p>{dataPerfil.emergencyContact}</p>
-                  <p>Numero de contacto de emergencia:</p>
+                  <h4># contacto de emergencia:</h4>
                   <p>{dataPerfil.guardianNumber}</p>
-                  <p>Edad:</p>
+                  <h4>Edad:</h4>
                   <p>{dataPerfil.age}</p>
-                </>
+                </div>
               ) : (
-                <>
+                <div className="profile-form">
                   <form>
                     <label>Nombre de usuario:</label>
                     <input
@@ -172,7 +172,7 @@ const Perfil = () => {
                       onChange={handleInputChange}
                     />
                   </form>
-                </>
+                </div>
               )}
             </div>
           </div>

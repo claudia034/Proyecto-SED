@@ -15,6 +15,7 @@ function Navbar() {
   const navigate = useNavigate();
 
   const [token, setToken] = useState(localStorage.getItem("token"));
+  const [role, setRole] = useState(0);
 
   const logout = () => {
     localStorage.removeItem("token");
@@ -32,8 +33,10 @@ function Navbar() {
         });
         const { user } = response.data;
         console.log("Respuesta del servidor: ", user.rol);
+        setRole(user.rol);
         if (user.rol == -1) {
           logout();
+          navigate("/")
         }
       }
       validToken();
@@ -109,16 +112,22 @@ function Navbar() {
                 </li>
                 {token != false ? (
                   <>
-                    <li className="nav-item">
-                      <button
-                        className="nav-link"
-                        onClick={() => {
-                          navigate("/dashboard");
-                        }}
-                      >
-                        <FontAwesomeIcon icon={faUser} /> Dashboard
-                      </button>
-                    </li>
+                    {role > 0 ? (
+                      <>
+                        <li className="nav-item">
+                          <button
+                            className="nav-link"
+                            onClick={() => {
+                              navigate("/dashboard");
+                            }}
+                          >
+                            <FontAwesomeIcon icon={faUser} /> Dashboard
+                          </button>
+                        </li>
+                      </>
+                    ) : (
+                      <></>
+                    )}
                     <li className="nav-item">
                       <button
                         className="nav-link"
