@@ -44,7 +44,9 @@ async function register({
 
     const result = await users.insertOne(newUser);
 
-    if (result.insertedCount === 1) {
+    console.log(result)
+
+    if (result) {
       return { success: "Usuario registrado con éxito" };
     } else {
       return { error: "Error al registrar el usuario" };
