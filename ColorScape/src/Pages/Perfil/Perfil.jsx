@@ -183,7 +183,7 @@ const Perfil = () => {
                 <button onClick={() => setEditing(false)}>Cancelar</button>
               </>
             ) : (
-              <button onClick={() => setEditing(true)}>Editar perfil</button>
+              <button className="b2" onClick={() => setEditing(true)}>Editar perfil</button>
             )}
           </div>
         </>

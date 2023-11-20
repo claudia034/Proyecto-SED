@@ -29,10 +29,12 @@ const Dashboard = () => {
     <div className="container-perfil">
       <h1>Dashboard</h1>
       <div className="options">
-        <button>Usuarios</button>
-        <button>Planes</button>
-        <button>Adquiridos</button>
+
+        <button className="b1" >Usuarios</button>
+        <button className="b1">Planes</button>
+        <button className="b1">Adquiridos</button>
       </div>
+
       <div className="container-users">
         <AdminUsers
           setEditing={setEditing}

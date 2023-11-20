@@ -126,3 +126,29 @@ table {
     }
   }
 }
+
+.b1 {
+  color: #024A86;
+  padding: 25px 50px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+  background-color: darken($primary-color, 10%);
+  }
+}
+
+.b2 {
+  background-color: #bdc3c7;
+  font-family: "Roboto";
+  color: #024A86;
+  padding: 25px 50px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+  background-color: darken($primary-color, 10%);
+  }
+}
