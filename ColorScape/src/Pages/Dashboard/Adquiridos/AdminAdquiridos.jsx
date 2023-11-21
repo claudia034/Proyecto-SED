@@ -1,5 +1,4 @@
 
-import "./Dashboard.scss";
 const AdminAdquiridos = () => {
   return (
     <div>

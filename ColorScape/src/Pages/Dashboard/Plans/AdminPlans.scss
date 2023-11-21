@@ -1,3 +1,6 @@
+$primary-color: #3498db;
+$background-color: #ecf0f1;
+$border-color: #bdc3c7;
 
 .container-todo-plans {
   display: flex;
@@ -8,14 +11,14 @@
 }
 
 .mi-button {
-    background-color: $primary-color;
-    color: #fff;
-    padding: 5px 10px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
+  background-color: $primary-color;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
 
-    &:hover {
+  &:hover {
     background-color: darken($primary-color, 10%);
-    }
+  }
 }
