@@ -53,6 +53,18 @@ const Dashboard = () => {
         >
           Adquiridos
         </button>
+
+        <button className="b1" >Usuarios</button>
+        <button className="b1">Planes</button>
+        <button className="b1">Adquiridos</button>
+      </div>
+
+      <div className="container-users">
+        <AdminUsers
+          setEditing={setEditing}
+          isEditing={isEditing}
+          userRole={userRole}
+        ></AdminUsers>
       </div>
       {optionSelected == 0 ? (
         <div className="container-users">
