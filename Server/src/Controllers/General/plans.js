@@ -1,4 +1,4 @@
-const { getplans, createplans } = require("../../database/plans");
+const { getplans, createplans, editPlans } = require("../../database/plans");
 
 const getPlansControllers = async (req, res) => {
   try {
@@ -16,12 +16,38 @@ const getPlansControllers = async (req, res) => {
 
 const postPlansControllers = async (req, res) => {
   try {
-    const { tipo, price, info } = req.body;
+    const { nombre, descripcion, precio } = req.body;
     const create = await createplans({
-      tipo,
-      price,
-      info,
+      nombre,
+      descripcion,
+      precio,
     });
+    if (create) {
+      res.status(200).json({
+        message: "Plan agregado",
+      });
+    } else {
+      res.status(401).json({
+        message: "Plan no agregado",
+      });
+    }
+  } catch (err) {
+    console.log(err);
+    res.status(401).json({ message: "Error en el servidor" });
+  }
+};
+
+const EditPlansControllers = async (req, res) => {
+  try {
+    const { nombre, descripcion, precio } = req.body;
+    //hacer update
+    const create = await editPlans({
+      nombre,
+      descripcion,
+      precio,
+      _id: req.params.id,
+    });
+    console.log(create);
     if (create) {
       res.status(200).json({
         message: "Plan agregado",
@@ -40,4 +66,5 @@ const postPlansControllers = async (req, res) => {
 module.exports = {
   getPlansControllers,
   postPlansControllers,
+  EditPlansControllers,
 };

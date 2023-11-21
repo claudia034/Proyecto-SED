@@ -2,10 +2,13 @@ import axios from "axios";
 import "./Dashboard.scss";
 import { useEffect, useState } from "react";
 import AdminUsers from "./Users/AdminUsers";
+import AdminPlans from "./Plans/AdminPlans";
+import AdminAdquiridos from "./Adquiridos/AdminAdquiridos";
 
 const Dashboard = () => {
   const [isEditing, setEditing] = useState(false);
   const [userRole, setUserRole] = useState(null);
+  const [optionSelected, setOptionSelected] = useState(0);
 
   useEffect(() => {
     if (!isEditing) {
@@ -29,17 +32,41 @@ const Dashboard = () => {
     <div className="container-perfil">
       <h1>Dashboard</h1>
       <div className="options">
-        <button>Usuarios</button>
-        <button>Planes</button>
-        <button>Adquiridos</button>
+        <button
+          onClick={() => {
+            setOptionSelected(0);
+          }}
+        >
+          Usuarios
+        </button>
+        <button
+          onClick={() => {
+            setOptionSelected(1);
+          }}
+        >
+          Planes
+        </button>
+        <button
+          onClick={() => {
+            setOptionSelected(2);
+          }}
+        >
+          Adquiridos
+        </button>
       </div>
-      <div className="container-users">
-        <AdminUsers
-          setEditing={setEditing}
-          isEditing={isEditing}
-          userRole={userRole}
-        ></AdminUsers>
-      </div>
+      {optionSelected == 0 ? (
+        <div className="container-users">
+          <AdminUsers
+            setEditing={setEditing}
+            isEditing={isEditing}
+            userRole={userRole}
+          ></AdminUsers>
+        </div>
+      ) : optionSelected == 1 ? (
+        <AdminPlans></AdminPlans>
+      ) : (
+        <AdminAdquiridos></AdminAdquiridos>
+      )}
     </div>
   );
 };

@@ -48,7 +48,7 @@ const AdminUsers = ({ setEditing, isEditing, userRole }) => {
   }, []);
 
   return (
-    <div>
+    <>
       {!isEditing ? (
         <>
           <table>
@@ -193,7 +193,7 @@ const AdminUsers = ({ setEditing, isEditing, userRole }) => {
           )}
         </div>
       )}
-    </div>
+    </>
   );
 };
 
